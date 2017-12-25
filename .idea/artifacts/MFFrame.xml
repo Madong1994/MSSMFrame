@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MFFrame">
+    <output-path>$PROJECT_DIR$/../MSSMFrame/out/artifacts/MFFrame</output-path>
+    <root id="archive" name="MFFrame.war">
+      <element id="javaee-facet-resources" facet="webApp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="javaee-facet-classes" facet="webApp/web/Web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.41" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
