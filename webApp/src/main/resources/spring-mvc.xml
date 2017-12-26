@@ -10,12 +10,12 @@
    http://www.springframework.org/schema/mvc
    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
-    <!-- 自动扫描bean，把作了注解的类转换为bean
-    <context:component-scan base-package="com.nsu.lwn" use-default-filters="false">
+    <!-- 自动扫描bean，把作了注解的类转换为bean-->
+    <context:component-scan base-package="com.md.frame" use-default-filters="false">
         <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
-    </context:component-scan>-->
+    </context:component-scan>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.md.frame.controller" />
+    <!--<context:component-scan base-package="com.md.frame.controller" />-->
 
     <!-- 默认的注解映射的支持 -->
     <mvc:annotation-driven/>
@@ -23,21 +23,33 @@
     <!--访问静态资源 -->
     <mvc:default-servlet-handler/>
 
-    <!-- 视图解释
+
+    <!--<mvc:default-servlet-handler />
+    &lt;!&ndash;处理HTTP请求/资源/ 有效地服务在$ { webapproot } /资源/目录静态资源
+    &ndash;&gt;
+    &lt;!&ndash;静态资源&ndash;&gt;
+    &lt;!&ndash; 对静态资源文件的访问 支持访问WEB-INF目录 &ndash;&gt;
+    <mvc:resources mapping="/css/**" location="/css/" />
+    <mvc:resources mapping="/js/**" location="/js/" />
+    <mvc:resources mapping="/images/**" location="/images/" />
+    <mvc:resources mapping="/jsp/**" location="/WEB-INF/jsp/" />&lt;!&ndash;你要访问的文件目录&ndash;&gt;-->
+
+
+     <!--视图解释-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="jsp/"/>
         <property name="suffix" value=".jsp"/>
-    </bean>-->
+    </bean>
 
     <!-- 使用thymeleaf解析 -->
-    <bean id="templateResolver"
+    <!--<bean id="templateResolver"
           class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".html" />
         <property name="templateMode" value="HTML" />
         <property name="cacheable" value="false" />
-        <property name="characterEncoding" value="UTF-8"/><!--不加会乱码-->
-    </bean>
+        <property name="characterEncoding" value="UTF-8"/>&lt;!&ndash;不加会乱码&ndash;&gt;
+    </bean>-->
 
     <!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 -->
     <bean id="multipartResolver"
